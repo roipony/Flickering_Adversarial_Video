@@ -94,15 +94,15 @@ pert = sess.run(perturbation)
 result_path =os.environ['DL_SHARED'] +'/Adversarial/Flickering_Adversarial_paper/results/i3d/single_video_attack/'
 save_result =True
 
-IMPROVE_ADV_LOSS =False
-PROB_MARGIN =1.0
-TARGETED_ATTACK=False
+IMPROVE_ADV_LOSS =True
+PROB_MARGIN =0.05
+TARGETED_ATTACK=True
 USE_LOGITS =False
 
-_cyclic_flag = 1.0
+_cyclic_flag =0.0 # 1.0
 _adv_flag =1.0
 
-_lr=0.001
+_lr=0.01
 
 # regularization loss:
 _beta_0 =1.# 1.0 #0.1# 1 #1 #1.0 #1.0
@@ -326,7 +326,7 @@ while True:  # to repeat with decreased epsilons if necessary
     #                    run_metadata=run_metadata)
     # writer.add_summary(summary, step)
 
-    is_adversarial = correct_cls_id!=max_class_id if not TARGETED_ATTACK else max_class_id==target_class
+    is_adversarial = correct_cls_id!=max_class_id if not TARGETED_ATTACK else max_class_id==target_class_id
 
     if  step > max_step and is_adversarial :
         res_dict['total_loss_l'] = total_loss_l

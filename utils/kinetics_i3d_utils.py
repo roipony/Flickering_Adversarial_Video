@@ -79,8 +79,16 @@ def load_kinetics_classes(eval_type='rgb'):
 class kinetics_i3d():
   """Basic unit containing Conv3D + BatchNorm + non-linearity."""
 
-  def __init__(self, ckpt_path='data/checkpoints/rgb_imagenet/model.ckpt', batch_size=1, init_model=True,init_pert_from_ckpt=False ,rgb_input=None, labels=None
-               ,cyclic_flag_default_c=0.0,cyclic_pert_flag_default_c=0.0,default_adv_flag_c=1.0, inf_norm=1.0 ):
+  def __init__(self, ckpt_path='data/checkpoints/rgb_imagenet/model.ckpt',
+               batch_size=1,
+               init_model=True,
+               init_pert_from_ckpt=False,
+               rgb_input=None,
+               labels=None,
+               cyclic_flag_default_c=0.0,
+               cyclic_pert_flag_default_c=0.0,
+               default_adv_flag_c=1.0,
+               inf_norm=1.0):
     """Initializes Unit3D module."""
     super(kinetics_i3d, self).__init__()
     self.ckpt_path=ckpt_path
@@ -265,7 +273,7 @@ class kinetics_i3d():
           if logits:
               self.to_min_elem = self.max_non_label_logits
               self.to_max_elem = self.label_logits
-              loss_margin= tf.log(1.+ margin*(1./self.label_prob))
+              loss_margin= tf.log(1.+ margin*(1./(0.00001+self.label_prob)))
           else:
               self.to_min_elem = self.max_non_label_prob
               self.to_max_elem = self.label_prob
