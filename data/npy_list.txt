@@ -1,0 +1,11 @@
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/7pxmupXYnuo.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/db.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/juggling_balls_wkVU4KyWS4k.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/n1cQkKL5ATQ.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/san_diego_ca_jadel_gregorio_triple_jump_1532m_short_approach.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/triple_jump_1_kinetics.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/triple_jump_kinetics_250f.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/triple_jump_kinetics.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/v_BreastStroke_g01_c01.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/v_CricketShot_g04_c01_flow.npy
+/data/DL/Adversarial/kinetics-i3d/data/npy_videos/v_CricketShot_g04_c01_rgb.npy

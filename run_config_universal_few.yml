@@ -1,0 +1,64 @@
+CLASS_GEN_ATTACK:
+  BATCH_SIZE: 8
+  BETA_1: 0.5
+  BETA_2: 0.5
+  CYCLIC_ATTACK: false
+  IMPROVE_ADV_LOSS: true
+  LAMBDA: 1.0
+  MAX_NUM_STEP: 10000
+  NPY_PATH: data/videos_for_tests/npy/
+  PKL_RESULT_PATH: result/generalization/single_class/
+  PROB_MARGIN: 0.05
+  TARGETED_ATTACK: false
+  TARGETED_CLASS: javelin throw
+  TF_RECORDS_TRAIN_PATH:
+  - /data/DL/Adversarial/ActivityNet/Crawler/Kinetics/database/tfrecord_uint8/train/using
+    computer/
+  TF_RECORDS_VAL_PATH:
+  - /data/DL/Adversarial/ActivityNet/Crawler/Kinetics/database/tfrecord_uint8/val/using
+    computer/
+  - /data/DL/Adversarial/ActivityNet/Crawler/Kinetics/database/tfrecord_uint8/test/using
+    computer/
+  USE_LOGITS: true
+DATA:
+  LABEL_MAP_PATH: data/label_map.txt
+MODEL:
+  CKPT_PATH: data/checkpoints/rgb_imagenet/model.ckpt
+  CKPT_PATH_WITH_ZERO_PERT: /data/DL/Adversarial/kinetics-i3d/result/generalization/model_gen_untargeted_ce_loss_reg/model_step_00000
+SINGLE_VIDEO_ATTACK:
+  BATCH_SIZE: 1
+  BETA_1: 0.5
+  BETA_2: 0.5
+  CYCLIC_ATTACK: false
+  IMPROVE_ADV_LOSS: true
+  LAMBDA: 1.0
+  MAX_NUM_STEP: 10
+  NPY_PATH: data/videos_for_tests/npy/
+  PKL_RESULT_PATH: result/videos_for_tests/npy/tmp/
+  PROB_MARGIN: 0.05
+  TARGETED_ATTACK: true
+  TARGETED_CLASS: javelin throw
+  TF_RECORDS_TRAIN_PATH: /data/DL/Adversarial/ActivityNet/Crawler/Kinetics/database/tfrecord_uint8/val/
+  TF_RECORDS_VAL_PATH: /data/DL/Adversarial/ActivityNet/Crawler/Kinetics/database/tfrecord_uint8/test/
+  USE_LOGITS: true
+UNIVERSAL_ATTACK:
+  BATCH_SIZE: 8
+  BETA_1: 1
+  BETA_2: 0
+  CYCLIC_ATTACK: false
+  IMPROVE_ADV_LOSS: true
+  LAMBDA: 10.0
+  MAX_NUM_STEP: 6000
+  NPY_PATH: data/videos_for_tests/npy/
+  NUM_OF_TRAIN_TF_RECORDS: 1
+  NUM_OF_VAL_TF_RECORDS: 40
+  NUM_OF_VID_EACH_TF_RECORDS: 50
+  PKL_RESULT_PATH: result/generalization/universal/val_test
+  PROB_MARGIN: 0.05
+  TARGETED_ATTACK: false
+  TARGETED_CLASS: javelin throw
+  TF_RECORDS_TRAIN_PATH:
+  - /home/ubadmin/pony/database/Kinetics/tfrecord_uint8/val/all_cls_shuffle/
+  TF_RECORDS_VAL_PATH:
+  - /home/ubadmin/pony/database/Kinetics/tfrecord_uint8/test/all_cls_shuffle/
+  USE_LOGITS: true
